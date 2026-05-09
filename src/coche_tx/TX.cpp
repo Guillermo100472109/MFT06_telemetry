@@ -70,7 +70,7 @@ static void actualizarOLED() {
     uint32_t tx = statSent;
     uint32_t drop = statRateDrop;
     uint32_t err = statMutexErr;
-    uint32_t dc = (now_ms > 0) ? (tx * lora_timing::TOA_MS / (now_ms / 1000u)) : 0u;
+    uint32_t dc = (now_ms >= 1000u) ? (tx * lora_timing::TOA_MS / (now_ms / 1000u)) : 0u;
 
     display.clear();
     display.setFont(ArialMT_Plain_10);
