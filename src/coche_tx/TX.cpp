@@ -227,7 +227,7 @@ void setup() {
     }
 
     SPI.begin(CAN_SCK, CAN_MISO, CAN_MOSI, CAN_CS);
-    if (CAN0.begin(MCP_ANY, CAN_1000KBPS, MCP_8MHZ) == CAN_OK) {
+    if (CAN0.begin(MCP_ANY, CAN_500KBPS, MCP_8MHZ) == CAN_OK) {
         CAN0.setMode(MCP_NORMAL);
         LOGL("[CAN] INIT OK");
     } else {
