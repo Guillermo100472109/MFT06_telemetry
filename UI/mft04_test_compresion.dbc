@@ -1,0 +1,117 @@
+VERSION ""
+
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: GS SW ECU PDM IMU SN1 SN2 SN3 FLX
+
+BO_ 896 heartbeat_gs: 1 GS
+ SG_ gs_id : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 912 heartbeat_sw: 1 SW
+ SG_ sw_id : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 944 heartbeat_pdm: 1 PDM
+ SG_ pdm_id : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 929 engine_temp: 6 ECU
+ SG_ engine_temp_raw : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 930 engine_press: 6 ECU
+ SG_ engine_press_raw : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 931 engine_fuel: 6 ECU
+ SG_ engine_fuel_raw : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 932 engine_speed: 7 ECU
+ SG_ engine_speed_raw : 0|56@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 933 engine_misc: 7 ECU
+ SG_ engine_misc_raw : 0|56@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 945 currents_engine: 8 PDM
+ SG_ currents_engine_raw : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 946 currents_cooling: 8 PDM
+ SG_ currents_cooling_raw : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 947 currents_other: 8 PDM
+ SG_ prior_current : 7|16@0+ (0.001,0) [0|0] "A" Vector__XXX
+
+BO_ 961 pos_cart: 8 IMU
+ SG_ pos_cart_raw : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 962 pos_eul: 6 IMU
+ SG_ pos_eul_raw : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 963 vel_cart: 6 IMU
+ SG_ vel_cart_raw : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 964 vel_eul: 6 IMU
+ SG_ vel_eul_raw : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 965 accel_cart: 6 IMU
+ SG_ accel_cart_raw : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 966 auto_values: 7 IMU
+ SG_ auto_values_raw : 0|56@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 967 pos_cart_acc: 6 IMU
+ SG_ pos_cart_acc_raw : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 968 pos_eul_acc: 6 IMU
+ SG_ pos_eul_acc_raw : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 969 status_imu: 8 IMU
+ SG_ status_imu_raw : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 934 influx_digital: 1 FLX
+ SG_ digital : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 176 steering: 8 Vector__XXX
+ SG_ steering_raw : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 177 dampers: 4 Vector__XXX
+ SG_ dampers_raw : 0|32@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 993 node_temp_1: 8 Vector__XXX
+ SG_ node_temp_1_raw : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 994 node_temp_2: 8 Vector__XXX
+ SG_ temp4 : 7|16@0+ (1,0) [0|0] "C" Vector__XXX
+
+BO_ 1911 laptimer_trigger: 8 Vector__XXX
+ SG_ timestamp_us : 0|64@1+ (1,0) [0|0] "microsec" Vector__XXX
+
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
