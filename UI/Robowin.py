@@ -399,7 +399,7 @@ class CanWorker(QThread):
                                         print(f"[DEBUG] ID 0x{can_id:X} no encontrado en DBC")
 
                                     # Intentar decodificar y mezclar con señales derivadas (ej. laptimer)
-                                    dbc_signals = self.db.decode_message(can_id, data_bytes)
+                                    dbc_signals = self.db.decode_message(can_id, data_bytes, scaling=False)
                                     decoded_signals.update(dbc_signals)
                                     print(f"[DEBUG] Señales decodificadas: {decoded_signals}")
                                 
